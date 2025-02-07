@@ -56,15 +56,15 @@ int main(int argc, char *argv[])
 
     std::vector<float> state = {9999., 1., 0.};
 
-    //// Task 1
-    // run_SIR("SIR_task1_1", 200, state, 1, 0.1, 0.1);
-    // run_SIR("SIR_task1_2", 200, std::vector<float>{5000, 5000, 0}, 0.2, 1, 0.1);
-    // run_SIR("SIR_task1_3", 200, state, 1, 1, 0.1);
-    // run_SIR("SIR_task1_4", 200, state, 0.2, 0.1, 0.1);
+    // Task 1
+    run_SIR("SIR_task1_1", 200, state, 1, 0.1, 0.1);
+    run_SIR("SIR_task1_2", 200, std::vector<float>{5000, 5000, 0}, 0.2, 1, 0.1);
+    run_SIR("SIR_task1_3", 200, state, 1, 1, 0.1);
+    run_SIR("SIR_task1_4", 200, state, 0.2, 0.1, 0.1);
 
-    //// Task 2
-    // run_SIR("SIR_task2_1", 200, state, 0.2, 0.1, 0.1);
-    // run_SIR("SIR_task2_2", 200, state, 0.2, 0.1, 0.00001, true);
+    // Task 2
+    run_SIR("SIR_task2_1", 200, state, 0.2, 0.1, 0.1);
+    run_SIR("SIR_task2_2", 200, state, 0.2, 0.1, 0.00001, true);
 
     for (int i = 0; i < 7; i++)
     {
