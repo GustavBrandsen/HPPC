@@ -1,0 +1,26 @@
+./seq -steps 440000 -no_mol 4
+Accumulated forces Bonds   : 4.3165e+08
+Accumulated forces Angles  : 4.0836e+08
+Accumulated forces Non-bond: 1.0225e+09
+Elapsed total time:          0.6144
+
+gprof -p -b seq gmon.out
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls  ns/call  ns/call  name    
+ 81.63      0.40     0.40   440000   909.09   909.09  UpdateNonBondedForces(System&)
+ 10.20      0.45     0.05   440000   113.64   113.64  UpdateBondForces(System&)
+  6.12      0.48     0.03   440000    68.18    68.18  UpdateAngleForces(System&)
+  2.04      0.49     0.01   440000    22.73    22.73  UpdateKDK(System&, Sim_Configuration&)
+  0.00      0.49     0.00    66000     0.00     0.00  void std::__adjust_heap<__gnu_cxx::__normal_iterator<unsigned long*, std::vector<unsigned long, std::allocator<unsigned long> > >, long, unsigned long, __gnu_cxx::__ops::_Iter_comp_iter<BuildNeighborList(System&)::{lambda(unsigned long&, unsigned long&)#1}> >(__gnu_cxx::__normal_iterator<unsigned long*, std::vector<unsigned long, std::allocator<unsigned long> > >, long, long, unsigned long, __gnu_cxx::__ops::_Iter_comp_iter<BuildNeighborList(System&)::{lambda(unsigned long&, unsigned long&)#1}>)
+  0.00      0.49     0.00     4401     0.00     0.00  WriteOutput(System&, std::basic_ofstream<char, std::char_traits<char> >&)
+  0.00      0.49     0.00     4400     0.00     0.00  BuildNeighborList(System&)
+  0.00      0.49     0.00        6     0.00     0.00  void std::vector<unsigned long, std::allocator<unsigned long> >::_M_realloc_insert<unsigned long const&>(__gnu_cxx::__normal_iterator<unsigned long*, std::vector<unsigned long, std::allocator<unsigned long> > >, unsigned long const&)
+  0.00      0.49     0.00        3     0.00     0.00  void std::vector<Molecule, std::allocator<Molecule> >::_M_realloc_insert<Molecule>(__gnu_cxx::__normal_iterator<Molecule*, std::vector<Molecule, std::allocator<Molecule> > >, Molecule&&)
+  0.00      0.49     0.00        1     0.00     0.00  MakeWater(unsigned long)
+  0.00      0.49     0.00        1     0.00     0.00  Sim_Configuration::Sim_Configuration(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >)
+  0.00      0.49     0.00        1     0.00     0.00  std::vector<Molecule, std::allocator<Molecule> >::~vector()
+  0.00      0.49     0.00        1     0.00     0.00  std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::~vector()
+  0.00      0.49     0.00        1     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >* std::__do_uninit_copy<char**, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*>(char**, char**, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*)

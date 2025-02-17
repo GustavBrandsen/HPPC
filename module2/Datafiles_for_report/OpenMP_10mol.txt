@@ -1,0 +1,5 @@
+./vec_updated -no_mol 10
+Accumulated forces Bonds   : 3.1143e+07
+Accumulated forces Angles  : 1.8983e+07
+Accumulated forces Non-bond: 2.9832e+08
+Elapsed total time:          0.0676

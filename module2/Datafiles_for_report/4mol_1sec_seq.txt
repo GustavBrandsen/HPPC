@@ -1,0 +1,33 @@
+./seq -steps 440000 -no_mol 4
+Accumulated forces Bonds   : 4.7527e+08
+Accumulated forces Angles  : 5.6532e+08
+Accumulated forces Non-bond: 1.4804e+09
+Elapsed total time:          0.9328
+
+gprof -p -b seq gmon.out
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls  us/call  us/call  name    
+ 53.49      0.23     0.23   440000     0.52     0.62  UpdateNonBondedForces(System&)
+ 16.28      0.30     0.07 37840000     0.00     0.00  operator*(double, Vec3 const&)
+ 16.28      0.37     0.07   440000     0.16     0.20  UpdateAngleForces(System&)
+  4.65      0.39     0.02  5280000     0.00     0.00  cross(Vec3 const&, Vec3 const&)
+  4.65      0.41     0.02   440000     0.05     0.06  UpdateBondForces(System&)
+  2.33      0.42     0.01   440000     0.02     0.07  UpdateKDK(System&, Sim_Configuration&)
+  2.33      0.43     0.01    66000     0.15     0.15  void std::__adjust_heap<__gnu_cxx::__normal_iterator<unsigned long*, std::vector<unsigned long, std::allocator<unsigned long> > >, long, unsigned long, __gnu_cxx::__ops::_Iter_comp_iter<BuildNeighborList(System&)::{lambda(unsigned long&, unsigned long&)#1}> >(__gnu_cxx::__normal_iterator<unsigned long*, std::vector<unsigned long, std::allocator<unsigned long> > >, long, long, unsigned long, __gnu_cxx::__ops::_Iter_comp_iter<BuildNeighborList(System&)::{lambda(unsigned long&, unsigned long&)#1}>)
+  0.00      0.43     0.00  1760000     0.00     0.00  dot(Vec3 const&, Vec3 const&)
+  0.00      0.43     0.00     4401     0.00     0.00  WriteOutput(System&, std::basic_ofstream<char, std::char_traits<char> >&)
+  0.00      0.43     0.00     4400     0.00     2.27  BuildNeighborList(System&)
+  0.00      0.43     0.00       41     0.00     0.00  void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char*>(char*, char*, std::forward_iterator_tag)
+  0.00      0.43     0.00        9     0.00     0.00  void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char const*>(char const*, char const*, std::forward_iterator_tag)
+  0.00      0.43     0.00        6     0.00     0.00  void std::vector<unsigned long, std::allocator<unsigned long> >::_M_realloc_insert<unsigned long const&>(__gnu_cxx::__normal_iterator<unsigned long*, std::vector<unsigned long, std::allocator<unsigned long> > >, unsigned long const&)
+  0.00      0.43     0.00        4     0.00     0.00  Atom* std::__do_uninit_copy<Atom const*, Atom*>(Atom const*, Atom const*, Atom*)
+  0.00      0.43     0.00        3     0.00     0.00  void std::vector<Molecule, std::allocator<Molecule> >::_M_realloc_insert<Molecule>(__gnu_cxx::__normal_iterator<Molecule*, std::vector<Molecule, std::allocator<Molecule> > >, Molecule&&)
+  0.00      0.43     0.00        2     0.00     0.00  int __gnu_cxx::__stoa<long, int, char, int>(long (*)(char const*, char**, int), char const*, char const*, unsigned long*, int)
+  0.00      0.43     0.00        1     0.00     0.00  MakeWater(unsigned long)
+  0.00      0.43     0.00        1     0.00     0.00  Sim_Configuration::Sim_Configuration(std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >)
+  0.00      0.43     0.00        1     0.00     0.00  std::vector<Molecule, std::allocator<Molecule> >::~vector()
+  0.00      0.43     0.00        1     0.00     0.00  std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::~vector()
+  0.00      0.43     0.00        1     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >* std::__do_uninit_copy<char**, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*>(char**, char**, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*)
