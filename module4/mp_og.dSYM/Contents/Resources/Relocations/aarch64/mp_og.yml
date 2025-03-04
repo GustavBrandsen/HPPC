@@ -1,0 +1,15 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     mp_og
+relocations:
+  - { offset: 0xB06C, size: 0x8, addend: 0x0, symName: __ZStL8__ioinit, symObjAddr: 0x5ECB1, symBinAddr: 0x100008008, symSize: 0x0 }
+  - { offset: 0xB501, size: 0x8, addend: 0x0, symName: _dF, symObjAddr: 0x1C80, symBinAddr: 0x100008000, symSize: 0x0 }
+  - { offset: 0xCEB8, size: 0x8, addend: 0x0, symName: __ZNSt6vectorIdSaIdEEC1ERKS1_, symObjAddr: 0x104C, symBinAddr: 0x100002D6C, symSize: 0xA4 }
+  - { offset: 0xDB15, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x1840, symBinAddr: 0x1000032E0, symSize: 0x3EC }
+  - { offset: 0xEBAA, size: 0x8, addend: 0x0, symName: __Z10propagatorSt6vectorIdSaIdEES1_S1_, symObjAddr: 0x460, symBinAddr: 0x100002180, symSize: 0xBEC }
+  - { offset: 0x1257B, size: 0x8, addend: 0x0, symName: __Z3fftRSt6vectorISt7complexIdESaIS1_EE, symObjAddr: 0xC0, symBinAddr: 0x100001DE0, symSize: 0x270 }
+  - { offset: 0x130A4, size: 0x8, addend: 0x0, symName: __Z13read_txt_fileNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE, symObjAddr: 0x10F0, symBinAddr: 0x100002E10, symSize: 0x484 }
+  - { offset: 0x13FD9, size: 0x8, addend: 0x0, symName: __ZNKSt5ctypeIcE8do_widenEc, symObjAddr: 0x0, symBinAddr: 0x100001D20, symSize: 0x8 }
+  - { offset: 0x14004, size: 0x8, addend: 0x0, symName: __ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC1IS3_EEPKcRKS3_.isra.0, symObjAddr: 0x8, symBinAddr: 0x100001D28, symSize: 0xB8 }
+  - { offset: 0x142FA, size: 0x8, addend: 0x0, symName: __Z4ifftRSt6vectorISt7complexIdESaIS1_EE, symObjAddr: 0x330, symBinAddr: 0x100002050, symSize: 0x130 }
+...

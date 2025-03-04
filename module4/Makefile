@@ -1,5 +1,4 @@
-CXX := clang++-12
-CXX := g++ 
+CXX := /opt/homebrew/Cellar/gcc/14.2.0_1/bin/g++-14 #g++
 
 #######################################################
 # Optimization flags are chosen as the last definition.
@@ -9,14 +8,17 @@ CXX := g++
 OPT=-O3 -ffast-math
 
 # Add thread checking to code
-#OPT=-O1 -fsanitize=thread -fPIE -pie
+#OPT=-O1 -fsanitize=thread,undefined,bounds -fPIE -pie
+
+# Add memory / address error checking to code
+#OPT=-O1 -fsanitize=leak,address,undefined,bounds -fPIE -pie
 
 # Faster compilation time
 #OPT=-O1
 
 CXXFLAGS := $(OPT) -Wall -march=native -g -std=c++17
 
-default: seq mp
+default: seq mp mp_og
 
 seq: seismogram_seq.cpp
 	$(CXX) seismogram_seq.cpp $(CXXFLAGS) -o seq
@@ -24,5 +26,8 @@ seq: seismogram_seq.cpp
 mp: seismogram_omp.cpp
 	$(CXX) seismogram_omp.cpp $(CXXFLAGS) -fopenmp -o mp
 
+mp_og: seismogram_omp.cpp
+	$(CXX) seismogram_omp_original.cpp $(CXXFLAGS) -fopenmp -o mp_og
+
 clean:
-	rm -fr seq mp
+	rm -fr seq mp mp_og
